@@ -4,8 +4,8 @@ MAINTAINER Clemens Stolle clemens.stolle@gmail.com
 
 RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 
-RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y build-essential libssl-dev libssl-doc curl
+RUN apt-get update && \
+  apt-get install -y build-essential libssl-dev libssl-doc curl
 
 # install github.com/wg/wrk v3.1.0
 RUN (mkdir /opt/wrk && cd /opt/wrk && curl -L# https://github.com/wg/wrk/archive/3.1.0.tar.gz | tar zx --strip 1 && make)
